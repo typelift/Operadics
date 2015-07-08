@@ -60,6 +60,18 @@ infix operator ->> {
 	precedence 110
 }
 
+/// Imap | Maps covariantly over the index of a right-leaning bifunctor.
+infix operator <^^> {
+	associativity left
+	precedence 140
+}
+
+/// Contramap | Contravariantly maps a function over the value encapsulated by a functor.
+infix operator <!> {
+	associativity left
+	precedence 140
+}
+
 /// MARK: Data.Result
 
 /// From | Creates a Result given a function that can possibly fail with an error.
