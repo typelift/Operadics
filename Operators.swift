@@ -33,6 +33,15 @@ infix operator |> {
 	precedence 0
 }
 
+/// On | Given a "combining" function and a function that converts arguments to the target of the
+/// combiner, returns a function that applies the right hand side to two arguments, then runs both
+/// results through the combiner.
+infix operator |*| {
+	associativity left
+	precedence 100
+}
+
+
 /// MARK: Control.*
 
 /// Fmap | Maps a function over the value encapsulated by a functor.
