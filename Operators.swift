@@ -105,8 +105,8 @@ infix operator <> {
 ///
 /// This function is literally `•`, but for Categories.
 infix operator <<< {
-	precedence 110
 	associativity right
+	precedence 110
 }
 
 /// Left-to-Right Composition | Composes two categories to form a new category with the source of
@@ -114,8 +114,8 @@ infix operator <<< {
 ///
 /// Function composition with the arguments flipped.
 infix operator >>> {
-	precedence 110
 	associativity right
+	precedence 110
 }
 
 /// MARK: Control.Arrow
@@ -123,39 +123,39 @@ infix operator >>> {
 /// Split | Splits two computations and combines the result into one Arrow yielding a tuple of
 /// the result of each side.
 infix operator *** {
-	precedence 130
 	associativity right
+	precedence 130
 }
 
 /// Fanout | Given two functions with the same source but different targets, this function
 /// splits the computation and combines the result of each Arrow into a tuple of the result of
 /// each side.
 infix operator &&& {
-	precedence 130
 	associativity right
+	precedence 130
 }
 
 /// MARK: Control.Arrow.Choice
 
 /// Splat | Splits two computations and combines the results into Eithers on the left and right.
 infix operator +++ {
-	precedence 120
 	associativity right
+	precedence 120
 }
 
 /// Fanin | Given two functions with the same target but different sources, this function splits
 /// the input between the two and merges the output.
 infix operator ||| {
-	precedence 120
 	associativity right
+	precedence 120
 }
 
 /// MARK: Control.Arrow.Plus
 
 /// Op | Combines two ArrowZero monoids.
 infix operator <+> {
-	precedence 150
 	associativity right
+	precedence 150
 }
 
 /// MARK: Data.JSON
@@ -165,8 +165,8 @@ infix operator <+> {
 /// If the given keypath is not present or the retrieved value is not of the appropriate type, this
 /// function returns `.None`.
 infix operator <? {
-	precedence 150
 	associativity left
+	precedence 150
 }
 
 /// Force Retrieve | Retrieves a value from a dictionary of JSON values using a given keypath,
@@ -176,8 +176,8 @@ infix operator <? {
 /// function will terminate with a fatal error.  It is recommended that you use Force Retrieve's
 /// total cousin `<?` (Retrieve).
 infix operator <! {
-	precedence 150
 	associativity left
+	precedence 150
 }
 
 /// MARK: Data.Set
