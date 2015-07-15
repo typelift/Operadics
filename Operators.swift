@@ -4,6 +4,7 @@
 //
 //  Created by Robert Widmann on 07/07/2015.
 //  Copyright (c) 2015 TypeLift. All rights reserved.
+//  Released under the MIT License.
 //
 
 /// MARK: Combinators
