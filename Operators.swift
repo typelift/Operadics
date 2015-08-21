@@ -7,7 +7,7 @@
 //  Released under the MIT License.
 //
 
-// Mark: Combinators
+// MARK: Combinators
 
 /// Compose | Applies one function to the result of another function to produce a third function.
 infix operator • {
@@ -42,7 +42,7 @@ infix operator |*| {
 }
 
 
-// Mark: Control.*
+// MARK: Control.*
 
 /// Fmap | Maps a function over the value encapsulated by a functor.
 infix operator <^> {
@@ -82,7 +82,7 @@ infix operator <!> {
 	precedence 140
 }
 
-// Mark: Data.Result
+// MARK: Data.Result
 
 /// From | Creates a Result given a function that can possibly fail with an error.
 infix operator !! {
@@ -90,7 +90,7 @@ infix operator !! {
 	precedence 120
 }
 
-// Mark: Data.Monoid
+// MARK: Data.Monoid
 
 /// Append | Alias for a Semigroup's operation.
 infix operator <> {
@@ -98,7 +98,7 @@ infix operator <> {
 	precedence 160
 }
 
-// Mark: Control.Category
+// MARK: Control.Category
 
 /// Right-to-Left Composition | Composes two categories to form a new category with the source of
 /// the second category and the target of the first category.
@@ -118,7 +118,7 @@ infix operator >>> {
 	precedence 110
 }
 
-// Mark: Control.Arrow
+// MARK: Control.Arrow
 
 /// Split | Splits two computations and combines the result into one Arrow yielding a tuple of
 /// the result of each side.
@@ -135,7 +135,7 @@ infix operator &&& {
 	precedence 130
 }
 
-// Mark: Control.Arrow.Choice
+// MARK: Control.Arrow.Choice
 
 /// Splat | Splits two computations and combines the results into Eithers on the left and right.
 infix operator +++ {
@@ -150,7 +150,7 @@ infix operator ||| {
 	precedence 120
 }
 
-// Mark: Control.Arrow.Plus
+// MARK: Control.Arrow.Plus
 
 /// Op | Combines two ArrowZero monoids.
 infix operator <+> {
@@ -158,7 +158,7 @@ infix operator <+> {
 	precedence 150
 }
 
-// Mark: Data.JSON
+// MARK: Data.JSON
 
 /// Retrieve | Retrieves a value from a dictionary of JSON values using a given keypath.
 ///
@@ -180,7 +180,7 @@ infix operator <! {
 	precedence 150
 }
 
-// Mark: Data.Set
+// MARK: Data.Set
 
 /// Intersection | Returns the intersection of two sets.
 infix operator ∩ {}
