@@ -7,7 +7,7 @@
 //  Released under the MIT License.
 //
 
-/// MARK: Combinators
+// MARK: Combinators
 
 /// Compose | Applies one function to the result of another function to produce a third function.
 infix operator • {
@@ -42,7 +42,7 @@ infix operator |*| {
 }
 
 
-/// MARK: Control.*
+// MARK: Control.*
 
 /// Fmap | Maps a function over the value encapsulated by a functor.
 infix operator <^> {
@@ -50,8 +50,39 @@ infix operator <^> {
 	precedence 140
 }
 
+/// Replace | Maps all the values encapsulated by a functor to a user-specified constant.
+infix operator <^ {
+	associativity left
+	precedence 140
+}
+
+/// Replace Backwards | Maps all the values encapsulated by a functor to a user-specified constant.
+infix operator ^> {
+	associativity left
+	precedence 140
+}
+
+
 /// Ap | Applies a function encapsulated by a functor to the value encapsulated by another functor.
 infix operator <*> {
+	associativity left
+	precedence 140
+}
+
+/// Sequence Right | Disregards the Functor on the Left.
+///
+/// Default definition:
+///		`const(id) <^> a <*> b`
+infix operator *> {
+	associativity left
+	precedence 140
+}
+
+/// Sequence Left | Disregards the Functor on the Right.
+///
+/// Default definition:
+///		`const <^> a <*> b`
+infix operator <* {
 	associativity left
 	precedence 140
 }
@@ -60,6 +91,25 @@ infix operator <*> {
 /// left to a function on the right yielding a new monad.
 infix operator >>- {
 	associativity left
+	precedence 110
+}
+
+/// Bind Backwards | Composes two monadic actions by passing the value inside the monad on the 
+/// right to the funciton on the left.
+infix operator -<< {
+	associativity right
+	precedence 110
+}
+
+/// Left-to-Right Kleisli |
+infix operator >>->> {
+	associativity right
+	precedence 110
+}
+
+/// Right-to-Left Kleisli |
+infix operator <<-<< {
+	associativity right
 	precedence 110
 }
 
@@ -82,7 +132,7 @@ infix operator <!> {
 	precedence 140
 }
 
-/// MARK: Data.Result
+// MARK: Data.Result
 
 /// From | Creates a Result given a function that can possibly fail with an error.
 infix operator !! {
@@ -90,7 +140,7 @@ infix operator !! {
 	precedence 120
 }
 
-/// MARK: Data.Monoid
+// MARK: Data.Monoid
 
 /// Append | Alias for a Semigroup's operation.
 infix operator <> {
@@ -98,7 +148,7 @@ infix operator <> {
 	precedence 160
 }
 
-/// MARK: Control.Category
+// MARK: Control.Category
 
 /// Right-to-Left Composition | Composes two categories to form a new category with the source of
 /// the second category and the target of the first category.
@@ -118,7 +168,7 @@ infix operator >>> {
 	precedence 110
 }
 
-/// MARK: Control.Arrow
+// MARK: Control.Arrow
 
 /// Split | Splits two computations and combines the result into one Arrow yielding a tuple of
 /// the result of each side.
@@ -135,7 +185,7 @@ infix operator &&& {
 	precedence 130
 }
 
-/// MARK: Control.Arrow.Choice
+// MARK: Control.Arrow.Choice
 
 /// Splat | Splits two computations and combines the results into Eithers on the left and right.
 infix operator +++ {
@@ -150,7 +200,7 @@ infix operator ||| {
 	precedence 120
 }
 
-/// MARK: Control.Arrow.Plus
+// MARK: Control.Arrow.Plus
 
 /// Op | Combines two ArrowZero monoids.
 infix operator <+> {
@@ -158,7 +208,7 @@ infix operator <+> {
 	precedence 150
 }
 
-/// MARK: Data.JSON
+// MARK: Data.JSON
 
 /// Retrieve | Retrieves a value from a dictionary of JSON values using a given keypath.
 ///
@@ -180,7 +230,7 @@ infix operator <! {
 	precedence 150
 }
 
-/// MARK: Data.Set
+// MARK: Data.Set
 
 /// Intersection | Returns the intersection of two sets.
 infix operator ∩ {}
