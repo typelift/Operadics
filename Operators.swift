@@ -50,8 +50,32 @@ infix operator <^> {
 	precedence 140
 }
 
+/// "Replace" | Maps all the values encapsulated by a functor to a user-specified constant.
+infix operator <% {
+	associativity left
+	precedence 140
+}
+
 /// Ap | Applies a function encapsulated by a functor to the value encapsulated by another functor.
 infix operator <*> {
+	associativity left
+	precedence 140
+}
+
+/// Sequence Right | Disregards the Functor on the Left.
+///
+/// Default definition:
+///		`const(id) <^> a <*> b`
+infix operator *> {
+	associativity left
+	precedence 140
+}
+
+/// Sequence Left | Disregards the Functor on the Right.
+///
+/// Default definition:
+///		`const <^> a <*> b`
+infix operator <* {
 	associativity left
 	precedence 140
 }
@@ -60,6 +84,25 @@ infix operator <*> {
 /// left to a function on the right yielding a new monad.
 infix operator >>- {
 	associativity left
+	precedence 110
+}
+
+/// Bind Backwards | Composes two monadic actions by passing the value inside the monad on the 
+/// right to the funciton on the left.
+infix operator -<< {
+	associativity right
+	precedence 110
+}
+
+/// Left-to-Right Kleisli |
+infix operator >>->> {
+	associativity right
+	precedence 110
+}
+
+/// Right-to-Left Kleisli |
+infix operator <<-<< {
+	associativity right
 	precedence 110
 }
 
