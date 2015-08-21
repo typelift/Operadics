@@ -58,8 +58,8 @@ infix operator <^ {
 
 /// Replace Backwards | Maps all the values encapsulated by a functor to a user-specified constant.
 infix operator ^> {
-associativity left
-precedence 140
+	associativity left
+	precedence 140
 }
 
 
