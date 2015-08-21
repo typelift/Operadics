@@ -50,11 +50,18 @@ infix operator <^> {
 	precedence 140
 }
 
-/// "Replace" | Maps all the values encapsulated by a functor to a user-specified constant.
-infix operator <% {
+/// Replace | Maps all the values encapsulated by a functor to a user-specified constant.
+infix operator <^ {
 	associativity left
 	precedence 140
 }
+
+/// Replace Backwards | Maps all the values encapsulated by a functor to a user-specified constant.
+infix operator ^> {
+associativity left
+precedence 140
+}
+
 
 /// Ap | Applies a function encapsulated by a functor to the value encapsulated by another functor.
 infix operator <*> {
