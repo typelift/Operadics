@@ -237,3 +237,29 @@ infix operator ∩ {}
 
 /// Union | Returns the union of two sets.
 infix operator ∪ {}
+
+// MARK: Prefix/Postfix
+
+prefix operator • {}
+postfix operator • {}
+
+prefix operator § {}
+postfix operator § {}
+
+prefix operator <| {}
+postfix operator <| {}
+
+prefix operator |> {}
+postfix operator |> {}
+
+prefix operator <^> {}
+postfix operator <^> {}
+
+prefix operator <!> {}
+postfix operator <!> {}
+
+prefix operator <*> {}
+postfix operator <*> {}
+
+prefix operator >>- {}
+postfix operator >>- {}
