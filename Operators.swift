@@ -101,13 +101,13 @@ infix operator -<< {
 	precedence 110
 }
 
-/// Left-to-Right Kleisli |
+/// Left-to-Right Kleisli | Composition for monads.
 infix operator >>->> {
 	associativity right
 	precedence 110
 }
 
-/// Right-to-Left Kleisli |
+/// Right-to-Left Kleisli | Composition for monads.
 infix operator <<-<< {
 	associativity right
 	precedence 110
