@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 TypeLift. All rights reserved.
 //  Released under the MIT License.
 //
+// Precedence marks for certain symbols aligned with Runes 
+// ~( https://github.com/thoughtbot/Runes/blob/master/Source/Runes.swift ) until Swift gets a proper
+// resolver.
 
 // MARK: Combinators
 
@@ -18,19 +21,19 @@ infix operator • {
 /// Apply | Applies an argument to a function.
 infix operator § {
 	associativity right
-	precedence 0
+	precedence 95
 }
 
 /// Pipe Backward | Applies the function to its left to an argument on its right.
 infix operator <| {
 	associativity right
-	precedence 0
+	precedence 95
 }
 
 /// Pipe forward | Applies an argument on the left to a function on the right.
 infix operator |> {
 	associativity left
-	precedence 0
+	precedence 95
 }
 
 /// On | Given a "combining" function and a function that converts arguments to the target of the
@@ -47,7 +50,8 @@ infix operator |*| {
 /// Fmap | Maps a function over the value encapsulated by a functor.
 infix operator <^> {
 	associativity left
-	precedence 140
+	// https://github.com/thoughtbot/Runes/blob/master/Source/Runes.swift
+	precedence 130
 }
 
 /// Replace | Maps all the values encapsulated by a functor to a user-specified constant.
@@ -66,7 +70,8 @@ infix operator ^> {
 /// Ap | Applies a function encapsulated by a functor to the value encapsulated by another functor.
 infix operator <*> {
 	associativity left
-	precedence 140
+	// https://github.com/thoughtbot/Runes/blob/master/Source/Runes.swift
+	precedence 130
 }
 
 /// Sequence Right | Disregards the Functor on the Left.
@@ -91,14 +96,16 @@ infix operator <* {
 /// left to a function on the right yielding a new monad.
 infix operator >>- {
 	associativity left
-	precedence 110
+	// https://github.com/thoughtbot/Runes/blob/master/Source/Runes.swift
+	precedence 100
 }
 
 /// Bind Backwards | Composes two monadic actions by passing the value inside the monad on the 
 /// right to the funciton on the left.
 infix operator -<< {
 	associativity right
-	precedence 110
+	// https://github.com/thoughtbot/Runes/blob/master/Source/Runes.swift
+	precedence 100
 }
 
 /// Left-to-Right Kleisli | Composition for monads.
