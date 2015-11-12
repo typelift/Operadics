@@ -226,6 +226,16 @@ infix operator <? {
 	precedence 150
 }
 
+/// Retrieve | Retrieves an optional value from a dictionary of JSON values using a given keypath.
+/// This is used for retrieving an Optional value for a value that is itself an Optional.
+///
+/// If the given keypath is not present or the retrieved value is not of the appropriate type, this
+/// function returns `.None`.
+infix operator <?? {
+    associativity left
+    precedence 150
+}
+
 /// Force Retrieve | Retrieves a value from a dictionary of JSON values using a given keypath,
 /// forcing any Optionals it finds.
 ///
