@@ -34,6 +34,7 @@ Operator | Name           | Recommended Type
 `|||`    | fanin          | `|||   <A, B, C, D, E>(A<B, D>, A<C, D>) -> A<Either<B, C>, D>`
 `<+>`    | op             | `<+>   <A, B, C>(A<B, C>, A<B, C>) -> A<B, C>`
 `<?`     | retrieve       | `<?    <A : JSONDecodable>(JSONValue, JSONKeypath) -> A?` 
+`<??`    | opt retrieve   | `<??   <A : JSONDecodable>(JSONValue, JSONKeypath) -> A??` 
 `<!`     | force retrieve | `<!    <A : JSONDecodable>(JSONValue, JSONKeypath) -> A` 
 `∪`      | union          | `∪     <A>(Set<A>, Set<A>) -> Set<A>`
 `∩`      | intersect      | `∩     <A>(Set<A>, Set<A>) -> Set<A>`
