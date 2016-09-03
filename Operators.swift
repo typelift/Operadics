@@ -20,6 +20,27 @@ precedencegroup CompositionPrecedence {
 /// Compose | Applies one function to the result of another function to produce a third function.
 infix operator • : CompositionPrecedence
 
+precedencegroup RightApplyPrecedence {
+	associativity: right
+	higherThan: AssignmentPrecedence
+	lowerThan: TernaryPrecedence
+}
+
+precedencegroup LeftApplyPrecedence {
+	associativity: left
+	higherThan: AssignmentPrecedence
+	lowerThan: TernaryPrecedence
+}
+
+/// Apply | Applies an argument to a function.
+infix operator § : RightApplyPrecedence
+
+/// Pipe Backward | Applies the function to its left to an argument on its right.
+infix operator <| : RightApplyPrecedence
+
+/// Pipe forward | Applies an argument on the left to a function on the right.
+infix operator |> : LeftApplyPrecedence
+
 precedencegroup RightAssociativeCombinatorPrecedence {
 	associativity: right
 	lowerThan: DefaultPrecedence
@@ -29,15 +50,6 @@ precedencegroup LeftAssociativeCombinatorPrecedence {
 	associativity: left
 	lowerThan: DefaultPrecedence
 }
-
-/// Apply | Applies an argument to a function.
-infix operator § : RightAssociativeCombinatorPrecedence
-
-/// Pipe Backward | Applies the function to its left to an argument on its right.
-infix operator <| : RightAssociativeCombinatorPrecedence
-
-/// Pipe forward | Applies an argument on the left to a function on the right.
-infix operator |> : LeftAssociativeCombinatorPrecedence
 
 /// On | Given a "combining" function and a function that converts arguments to the target of the
 /// combiner, returns a function that applies the right hand side to two arguments, then runs both
