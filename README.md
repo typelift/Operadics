@@ -10,10 +10,10 @@ Operator | Name           | Recommended Type
 -------- | -------------- | ------------------------------------------
 `•`      | compose        | `•     <A, B, C>(B -> C, A -> B) -> A -> C`
 `§`      | apply          | `§     <A, B>(A -> B, A) -> B`
-`<|`     | apply          | `<|    <A, B>(A -> B, A) -> B`
-`|>`     | thrush         | `|>    <A, B>(A, A -> B) -> B`
+`<\|`    | apply          | `<\|    <A, B>(A -> B, A) -> B`
+`\|>`    | thrush         | `\|>    <A, B>(A, A -> B) -> B`
 `<-`     | extract        | `<-    <A>(M<A>, A) -> Void`
-`|*|`    | on             | `|*|   <A, B, C>((B, B) -> C, A -> B) -> A -> A -> C`
+`\|*\|`  | on             | `\|*\|   <A, B, C>((B, B) -> C, A -> B) -> A -> A -> C`
 `<>`     | op             | `<>    <A : Monoid>(A, A) -> A`
 `<^`     | replace        | `<^    <A, B>(A, F<B>) -> F<A>`
 `^>`     | replace        | `^>    <A, B>(F<A>, B) -> F<B>`
@@ -31,7 +31,7 @@ Operator | Name           | Recommended Type
 `&&&`    | split          | `&&&   <A, B, C, D>(A<B, C>, A<B, D>) -> A<B, (C, D)>` 
 `***`    | fanout         | `***   <A, B, C, D, E>(A<B, C>, A<D, E>) -> A<(B, D), (C, E)>` 
 `+++`    | splat          | `+++   <A, B, C, D, E>(A<B, C>, A<D, E>) -> A<Either<D, B>, Either<C, E>>`
-`|||`    | fanin          | `|||   <A, B, C, D, E>(A<B, D>, A<C, D>) -> A<Either<B, C>, D>`
+`\|\|\|` | fanin          | `\|\|\|   <A, B, C, D, E>(A<B, D>, A<C, D>) -> A<Either<B, C>, D>`
 `<+>`    | op             | `<+>   <A, B, C>(A<B, C>, A<B, C>) -> A<B, C>`
 `<?`     | retrieve       | `<?    <A : JSONDecodable>(JSONValue, JSONKeypath) -> A?` 
 `<??`    | opt retrieve   | `<??   <A : JSONDecodable>(JSONValue, JSONKeypath) -> A??` 
